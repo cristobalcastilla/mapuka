@@ -5,9 +5,10 @@ window.mapukaApp = window.mapukaApp || {};
 // HOME class
 mapukaApp.HomeView = Backbone.View.extend({
   id: "home", 
-  className: "container",
   // template: mapukaApp.tpl.templates['home'], 
-  events: {}, 
+  events: {
+    "click form a.submit": "onSubmitClick"
+  }, 
 
   initialize: function () {
     this.template = mapukaApp.tpl.templates['home'];
@@ -15,6 +16,14 @@ mapukaApp.HomeView = Backbone.View.extend({
 
   render: function () {
     this.$el.append( _.template(this.template) );
+    return this;
+  }, 
+
+  onSubmitClick: function (e) {
+    e.preventDefault();
+
+    var code = this.$('form input[name=code]').val();
+    mapukaApp.router.navigate('ficha/'+code);
     return this;
   }
 });
