@@ -5,11 +5,27 @@
    ========================================================================== */
 
 
+#logo {
+  margin-bottom: 50px;
+  /* text-align: center; */
+}
 
+ul.nav {
+  text-transform: uppercase;
+}
 
+ul.nav li {
+  margin-bottom: 20px;
 
+}
 
+ul.nav li i {
+  opacity: .5;
+}
 
+ul.nav li:hover i {
+  opacity: 1;
+}
 
 
 

@@ -6,8 +6,9 @@ window.mapukaApp = window.mapukaApp || {};
 mapukaApp.HomeView = Backbone.View.extend({
   id: "home", 
   // template: mapukaApp.tpl.templates['home'], 
+
   events: {
-    "click form a.submit": "onSubmitClick"
+    "click .nav a": "onNavClicked"
   }, 
 
   initialize: function () {
@@ -19,11 +20,15 @@ mapukaApp.HomeView = Backbone.View.extend({
     return this;
   }, 
 
-  onSubmitClick: function (e) {
+  onNavClicked: function (e) {
     e.preventDefault();
 
-    var code = this.$('form input[name=code]').val();
-    mapukaApp.router.navigate('ficha/'+code);
+    console.log(e);
+
+    var id = this.$(e.currentTarget).attr('data-id');
+    this.remove();
+    
+    mapukaApp.router.navigate('ficha/'+id);
     return this;
   }
 });
