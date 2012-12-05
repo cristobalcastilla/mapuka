@@ -6,7 +6,7 @@ $(document).ready(
   function () {
 
     // fill up nav items
-    var navItems = ['Primeros pobladores', 'Cerámica temprana', 'Tradición malambo', 'Zenues', 'Tayronas', 'Zambrano', 'Conquista y colonización'];
+    var navItems = ['Primeros pobladores', 'Cerámica temprana', 'Tradición malambo', 'Zenues', 'Tayronas', 'Zambrano', 'Conquista y colonia'];
 
     mapukaApp.nav = new mapukaApp.NavItemsCollection();
 
@@ -22,7 +22,7 @@ $(document).ready(
 
     // Load templates
     _.templateSettings = { interpolate : /\{\{(.+?)\}\}/g }; // use templates as Moustache
-    mapukaApp.tpl.loadTemplates(['home', 'nav_item'], function() {
+    mapukaApp.tpl.loadTemplates(['home', 'nav_item', 'card'], function() {
       console.log("All templates loaded");
       Backbone.history.start();
       // mapukaApp.router.navigate("");

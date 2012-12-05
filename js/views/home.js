@@ -7,7 +7,7 @@ mapukaApp.HomeView = Backbone.View.extend({
 
   id: "home", 
   events: {
-    // "click .nav a": "onNavClicked"
+    'click ul.nav a': 'showCard'
   }, 
 
 
@@ -17,7 +17,7 @@ mapukaApp.HomeView = Backbone.View.extend({
 
 
   render: function () {
-    this.$el.append( _.template(this.template) );
+    this.$el.html( _.template(this.template) );
 
     var ulEl = this.$el.find('ul.nav');
     _.each(this.collection.models, function (item) {      
@@ -25,17 +25,16 @@ mapukaApp.HomeView = Backbone.View.extend({
       ulEl.append( navItem.render().el );
     });
     return this;
-  }//, 
+  },
 
-  // onNavClicked: function (e) {
-  //   e.preventDefault();
 
-  //   console.log(e);
+  showCard: function (e) {
+    e.preventDefault();
 
-  //   var id = this.$(e.currentTarget).attr('data-id');
-  //   this.remove();
+    var id = this.$(e.currentTarget).attr('data-id');
+    this.remove();
 
-  //   mapukaApp.router.navigate('ficha/'+id);
-  //   return this;
-  // }
+    mapukaApp.router.navigate('ficha/'+id, true);
+    return this;
+  }
 });

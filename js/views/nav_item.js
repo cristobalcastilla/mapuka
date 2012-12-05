@@ -15,7 +15,7 @@ mapukaApp.NavItemView = Backbone.View.extend({
 
 
   render: function () {
-    this.$el.append( _.template( this.template, this.model.toJSON() ));
+    this.$el.html( _.template( this.template, this.model.toJSON() ));
     return this;
   }
 });
