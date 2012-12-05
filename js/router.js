@@ -11,7 +11,7 @@ mapukaApp.Router = Backbone.Router.extend({
 
   home: function (){
     console.log("Router a home");
-    var homeView = new mapukaApp.HomeView();
+    var homeView = new mapukaApp.HomeView({ collection:mapukaApp.nav });
     homeView.render();
     mapukaApp.stage.append( homeView.el );
   }, 
