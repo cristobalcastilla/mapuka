@@ -6,7 +6,7 @@ $(document).ready(
   function () {
 
     // fill up nav items
-    var navItems = ['Primeros pobladores', 'Cerámica temprana', 'Tradición malambo', 'Zenues', 'Tayronas', 'Zambrano', 'Conquista y colonia'];
+    var navItems = ['Primeros pobladores', 'Cerámica temprana', 'Tradición malambo', 'Zenues', 'Tayronas', 'Zambrano', 'Conquista y colonia', 'Samit Saenz'];
 
     mapukaApp.nav = new mapukaApp.NavItemsCollection();
 
